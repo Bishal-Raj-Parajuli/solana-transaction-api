@@ -8,7 +8,7 @@ const transactionController = new TransactionController();
 router.get(
   '/transaction/:ca', 
   transactionCacheMiddleware,
-  transactionController.getTransactionDetail.bind(transactionController)
+  (req, res) => transactionController.getTransactionDetail(req, res)
 );
 
 export default router;
